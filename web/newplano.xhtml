@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:composition template="index.xhtml">
+        <ui:define name="title">
+            Cadastro de Plano de Saúde
+        </ui:define>
+        
+        <ui:define name="menu">
+            <div class="info">
+                <h3><span class="glyphicon glyphicon-plus"></span>Sistema de Marcação de Consulta</h3>
+            </div>
+            <div class="container well">
+                <div class="btn-group show-on-hover">
+                    <p class="btn btn-default dropdown-toggle">
+                      Médico
+                    </p>
+                </div>
+                <div class="btn-group show-on-hover">
+                    <p class="btn btn-default dropdown-toggle">
+                      Paciente
+                    </p>
+                </div>
+                <div class="btn-group show-on-hover">
+                    <p class="btn btn-default dropdown-toggle">
+                      Atendente
+                    </p>
+                </div>
+                <div class="btn-group show-on-hover">
+                    <p class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      Cadastro <span class="caret"></span>
+                    </p>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Médico</a></li>
+                        <li><a href="faces/Paciente.xhtml">Paciente</a></li>
+                        <li class="divider"></li>
+                        <li><a href="faces/newespecialidade.xhtml">Especialidade</a></li>
+                        <li><a href="faces/newplano.xhtml">Plano de Saúde</a></li>
+                        <li class="divider"></li>
+                        <li><a href="faces/listespecialidade.xhtml">Listagem de Especialidades</a></li>
+                        <li><a href="faces/listplano.xhtml">Listagem de Plano de Saúde</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </ui:define>
+        <ui:define class="title" name="titulo">
+            <div class="info">
+                <h3><span class="glyphicon glyphicon-inbox"></span> Cadastro de Plano de Saúde</h3>
+            </div>
+        </ui:define>
+        <ui:define name="context">
+            <h:form>
+                <div class="row">
+                    <h:outputLabel value="Plano de Saúde:"/>
+                    <h:inputText styleClass="form-control"
+                                 value="#{beanPlanoSaude.planosaude.nomePlano}"
+                                 required="true"
+                                 requiredMessage="Informe o nome do Plano de Saúde"/>
+                </div><br/>
+                <h:commandButton styleClass="btn btn-info btn-lg" value="Salvar"
+                                 action="#{beanPlanoSaude.add()}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+
